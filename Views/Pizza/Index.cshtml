@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Pizza>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 @{
@@ -26,18 +28,20 @@
         <th>Description</th>
         <th>Image</th>
         <th>Price</th>
+        <th></th>
     </thead>
     <tbody>
         
-       @* @foreach(Pizza pizza in )
+        @foreach(Pizza pizza in Model)
         {
             <tr>
                 <td>@pizza.Name</td>
                 <td>@pizza.Description</td>
                 <td><img src="@pizza.Image"></td>
                 <td>@(pizza.Price)&euro;</td>
+                <td><a class="btn btn-primary" href="@Url.Action("Detail", "Pizza", new {@pizza.Id})" >Visualizza</a></td>
             </tr>
-        }*@
+        }
        
     </tbody>
 </table>
