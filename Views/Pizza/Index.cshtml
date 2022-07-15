@@ -37,7 +37,7 @@
             <tr>
                 <td>@pizza.Name</td>
                 <td>@pizza.Description</td>
-                <td><img src="@pizza.Image"></td>
+                <td><div class="container-image"><img src="@pizza.Image"></div></td>
                 <td>@(pizza.Price)&euro;</td>
                 <td><a class="btn btn-primary" href="@Url.Action("Detail", "Pizza", new {@pizza.Id})" >Visualizza</a></td>
             </tr>
